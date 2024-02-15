@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --nav_bg: rgb(0, 0, 30);
+    --text_color: white;
+}
+
+.light-mode {
+    --nav_bg: white;
+    --text_color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-top {
+    background-color: var(--nav_bg);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centernav {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0px 10px 20px rgb(90, 90, 90, .3),
+        inset 0px -10px 20px rgb(90, 90, 90, .3);
+}
+
+.logo h1 {
+    color: white;
+    font-size: 25px;
+}
+
+.search-darktoggle {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.searchbox {
+    width: 80%;
+    display: flex;
+    position: relative;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.searchbox input {
+    background-color: transparent;
+    border: none;
+    padding: 10px 5px;
+    font-size: 17px;
+    outline: none;
+    color: var(--text_color);
+    width: 92%;
+}
+
+.search_icon {
+    position: absolute;
+    color: var(--text_color);
+    right: 8px;
+    top: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.dark-light{
+    width: 15%;
+}
+.dlBox{
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    position: relative;
+    display: block;
+    border-radius: 15px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, .4),
+                inset 0 -5px 15px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transition: 1s;
+}
+.dlBox:after{
+    content: "";
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: linear-gradient(180deg, black,  rgb(26, 0, 121));
+    box-shadow: 0 0 10px black;
+    border-radius: 28px;
+    transition: 0.4s;
+}
+#darklight-toggle{
+    width: 0;
+    height: 0;
+    display: none;
+}
+#darklight-toggle:checked + .dlBox {
+    background-color: #242424;
+}
+#darklight-toggle:checked + .dlBox:after {
+    left: 1px;
+    background: linear-gradient(180deg, white,  #d8860b);
+    box-shadow: 0 0 10px #d8860b;
+}
+.dlBox:active:after{
+    width: 70px;
+}
